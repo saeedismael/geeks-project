@@ -1,0 +1,20 @@
+pipeline{
+
+	agent any
+
+	stages {
+		stage('Build') {
+
+			steps {
+				sh 'sudo docker build -t cyberpunks77/geeksproject:latest .'
+			}
+		}
+
+		stage('Push') {
+
+			steps {
+				sh 'sudo docker push cyberpunks77/geeksproject'
+			}
+		}
+	}
+}
